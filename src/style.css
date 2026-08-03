@@ -1532,7 +1532,7 @@ select option {
 }
 
 .top {
-  height: 40%;
+  height: 34%;
   background: radial-gradient(
     100% 195.79% at 0% 0%,
     rgba(255, 255, 255, 0.28) 1.29%,
@@ -1553,13 +1553,13 @@ select option {
   );
   border: 1px solid white;
   border-radius: 0 0 1rem 1rem;
-  height: 60%;
+  height: 66%;
 }
 
 .instructor-info-image {
   position: absolute;
   left: 20%;
-  top: 38%;
+  top: 34%;
   transform: translate(-50%, -50%);
   width: 15rem;
   height: 15rem;
@@ -1644,8 +1644,15 @@ select option {
 }
 
 .description {
+  display: block;
+  max-height: 8rem;
+  padding-right: 0.75rem;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  scrollbar-gutter: stable;
   font-weight: 400;
   font-size: 1rem;
+  line-height: 1.5;
 }
 
 .drop-cap {
@@ -1944,6 +1951,7 @@ input[type="file"]::file-selector-button:hover {
 
 .modal-input-description-edit {
   textarea {
+    box-sizing: border-box;
     background: none;
     border: none;
     border-radius: 0;
@@ -1952,8 +1960,17 @@ input[type="file"]::file-selector-button:hover {
     -moz-appearance: none;
     appearance: none;
 
-    text-indent: 1rem;
+    min-height: 8rem;
+    height: clamp(8rem, 24dvh, 12rem);
+    max-height: min(18rem, 45dvh);
+    padding: 0.75rem;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+    resize: vertical;
+    scrollbar-gutter: stable;
+    text-indent: 0;
     font-size: 1rem;
+    line-height: 1.5;
     background: radial-gradient(
       98.58% 260.42% at 0% 2.28%,
       rgba(255, 255, 255, 0.098) 4.75%,
@@ -1962,7 +1979,6 @@ input[type="file"]::file-selector-button:hover {
     border: 1px solid #ffffff;
     border-radius: 0.5rem;
     width: 100%;
-    height: 10vh;
   }
 }
 
